@@ -106,7 +106,7 @@ namespace WOLF
                 }
                 var otherWolfPartModules = vessel
                     .FindPartModulesImplementing<WOLF_AbstractPartModule>()
-                    .Where(p => p != this);
+                    .Where(p => p != this && !(p is WOLF_SurveyModule));
                 var otherWolfHoppers = vessel.FindPartModulesImplementing<WOLF_HopperModule>();
                 if (otherWolfPartModules.Any() || otherWolfHoppers.Any())
                 {
